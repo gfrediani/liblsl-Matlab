@@ -1,4 +1,5 @@
 % instantiate the library
+LSLVersion
 disp('Loading library...');
 lib = lsl_loadlib();
 
@@ -19,7 +20,7 @@ outlet = lsl_outlet(info);
 % send markers into the outlet
 disp('Now transmitting data...');
 markers = {'Test', 'Blah', 'Marker', 'XXX', 'Testtest', 'Test-1-2-3'};
-while true
+for i=1:20
     pause(rand()*3);
     mrk = markers{min(length(markers), 1+floor(rand()*(length(markers))))};
     disp(['now sending ' mrk]);
